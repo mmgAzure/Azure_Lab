@@ -11,6 +11,9 @@
 		"DestinationContainer_connectionString": {
 			"value": ""
 		},
+		"AzureDatabricks_accessToken": {
+			"value": ""
+		},
 		"PublicDataset_sasUri": {
 			"value": ""
 		},
