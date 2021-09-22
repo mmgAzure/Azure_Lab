@@ -703,7 +703,7 @@
 							},
 							{
 								"name": "Destination",
-								"value": "adftutorial/output/output_excel"
+								"value": "adftutorial/output/output_excel.csv"
 							}
 						],
 						"typeProperties": {
