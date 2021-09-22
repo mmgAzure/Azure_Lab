@@ -86,7 +86,7 @@
 					"baseParameters": {
 						"accountName": "mmg2021blob",
 						"accountKey": {
-							"value": "dapi7e294bd60002dd9fdbe809bb82140f93-2",
+							"value": "dapi807425b04e371a8dc8d7951f5bcb7373-2",
 							"type": "Expression"
 						},
 						"containerName": "dwtemp"
