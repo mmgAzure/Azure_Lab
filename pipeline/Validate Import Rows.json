@@ -1,5 +1,5 @@
 {
-	"name": "Import CSV",
+	"name": "Validate Import Rows",
 	"properties": {
 		"activities": [
 			{
@@ -96,6 +96,26 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Validate Import Rows",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[SalesLT].[usp_CheckProductStaging]"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureSQL_mmg",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"annotations": []
