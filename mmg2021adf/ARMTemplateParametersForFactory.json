@@ -17,6 +17,9 @@
 		"AzureDatabricks2_accessToken": {
 			"value": ""
 		},
+		"AzureSQL_mmg_connectionString": {
+			"value": ""
+		},
 		"PublicDataset_sasUri": {
 			"value": ""
 		}
