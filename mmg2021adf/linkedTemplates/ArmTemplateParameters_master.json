@@ -8,6 +8,12 @@
 		"AzureStorageLinkedService_connectionString": {
 			"value": ""
 		},
+		"DestinationContainer_connectionString": {
+			"value": ""
+		},
+		"PublicDataset_sasUri": {
+			"value": ""
+		},
 		"containerUri": {
 			"value": ""
 		},
