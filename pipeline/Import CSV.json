@@ -26,11 +26,73 @@
 							"type": "DelimitedTextReadSettings"
 						}
 					},
-					"enableStaging": false
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Name"
+								},
+								"sink": {
+									"name": "Name"
+								}
+							},
+							{
+								"source": {
+									"name": "ProductID"
+								},
+								"sink": {
+									"name": "ProductID",
+									"precision": 10
+								}
+							},
+							{
+								"source": {
+									"name": "ProductNumber"
+								},
+								"sink": {
+									"name": "ProductNumber"
+								}
+							},
+							{
+								"source": {
+									"name": "Color"
+								},
+								"sink": {
+									"name": "Color"
+								}
+							},
+							{
+								"source": {
+									"name": "StandardCost"
+								},
+								"sink": {
+									"name": "StandardCost",
+									"scale": 4,
+									"precision": 19
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
 				},
 				"inputs": [
 					{
 						"referenceName": "ProductsCSV",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ProductStaging",
 						"type": "DatasetReference"
 					}
 				]
