@@ -1216,7 +1216,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Import CSV')]",
+			"name": "[concat(parameters('factoryName'), '/Validate Import Rows')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -1317,6 +1317,26 @@
 								"parameters": {}
 							}
 						]
+					},
+					{
+						"name": "Validate Import Rows",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[SalesLT].[usp_CheckProductStaging]"
+						},
+						"linkedServiceName": {
+							"referenceName": "AzureSQL_mmg",
+							"type": "LinkedServiceReference"
+						}
 					}
 				],
 				"policy": {
@@ -1327,7 +1347,8 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/ProductsCSV')]",
-				"[concat(variables('factoryId'), '/datasets/ProductStaging')]"
+				"[concat(variables('factoryId'), '/datasets/ProductStaging')]",
+				"[concat(variables('factoryId'), '/linkedServices/AzureSQL_mmg')]"
 			]
 		},
 		{
