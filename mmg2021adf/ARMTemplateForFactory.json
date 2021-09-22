@@ -123,7 +123,7 @@
 							"notebookPath": "/Users/axmarvin2@outlook.com/03-Data-Ingestion-Via-ADF/includes/Databricks-Data-Transformations",
 							"baseParameters": {
 								"accountName": "mmg2021blob",
-								"accountKey": "AxM@rvin880702",
+								"accountKey": "pk5snHlRTvFYn+8BmFBFXsfAGayY9FGBMwwmOGZ4j3lNsQP21QYyN+2T4gtmhulQ+1tPPuepVHzVw6cvVX2bfw==",
 								"containerName": "dwtemp"
 							}
 						},
