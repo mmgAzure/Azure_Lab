@@ -19,6 +19,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks'"
 		},
+		"AzureDatabricks2_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks2'"
+		},
 		"PublicDataset_sasUri": {
 			"type": "secureString",
 			"metadata": "Secure string for 'sasUri' of 'PublicDataset'"
@@ -119,12 +123,12 @@
 							"notebookPath": "/Users/axmarvin2@outlook.com/03-Data-Ingestion-Via-ADF/includes/Databricks-Data-Transformations",
 							"baseParameters": {
 								"accountName": "mmg2021blob",
-								"accountKey": "dapi7905da44b01b1209a025d797b402826a-2",
+								"accountKey": "dapi5f8f160545ef9787551ca0bde3f0031f-2",
 								"containerName": "dwtemp"
 							}
 						},
 						"linkedServiceName": {
-							"referenceName": "AzureDatabricks",
+							"referenceName": "AzureDatabricks2",
 							"type": "LinkedServiceReference"
 						}
 					}
@@ -138,7 +142,7 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/SourceDataset_maz')]",
 				"[concat(variables('factoryId'), '/datasets/DestinationDataset_maz')]",
-				"[concat(variables('factoryId'), '/linkedServices/AzureDatabricks')]"
+				"[concat(variables('factoryId'), '/linkedServices/AzureDatabricks2')]"
 			]
 		},
 		{
@@ -966,6 +970,24 @@
 					"accessToken": {
 						"type": "SecureString",
 						"value": "[parameters('AzureDatabricks_accessToken')]"
+					},
+					"existingClusterId": "0922-084635-silos866"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureDatabricks2')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureDatabricks",
+				"typeProperties": {
+					"domain": "https://adb-426536789798140.0.azuredatabricks.net",
+					"accessToken": {
+						"type": "SecureString",
+						"value": "[parameters('AzureDatabricks2_accessToken')]"
 					},
 					"existingClusterId": "0922-084635-silos866"
 				}

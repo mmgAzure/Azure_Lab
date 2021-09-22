@@ -14,6 +14,9 @@
 		"AzureDatabricks_accessToken": {
 			"value": ""
 		},
+		"AzureDatabricks2_accessToken": {
+			"value": ""
+		},
 		"PublicDataset_sasUri": {
 			"value": ""
 		}
